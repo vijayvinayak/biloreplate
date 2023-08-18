@@ -1,0 +1,53 @@
+{
+  "name": "node-template",
+  "version": "0.0.1",
+  "description": "Basic template for nodejs application",
+  "main": "src/app.js",
+  "scripts": {
+    "lint": "node node_modules/eslint/bin/eslint.js .",
+    "lint-fix": "node node_modules/eslint/bin/eslint.js . --fix",
+    "dev": "nodemon src/app.js",
+    "start": "node src/app.js",
+    "build": "npm install --no-optional && npm pack",
+    "deploy": "npm install --no-optional && npm ci",
+    "nocoverage": "jest --detectOpenHandles",
+    "test:ci": "jest --config ./jest.config.js --collectCoverage --coverageDirectory=\"./coverage\" --ci --reporters=default --reporters=jest-junit --watchAll=false"
+  },
+  "nodemonConfig": {
+    "watch": [
+      "src/*",
+      "config/*"
+    ],
+    "ignore": [
+      "test/*",
+      "docs/*"
+    ],
+    "delay": 1500
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.25.0",
+    "bluebird": "^3.7.2",
+    "deferred": "^0.7.11",
+    "dotenv": "^8.6.0",
+    "express": "^4.17.2",
+    "express-async-errors": "^3.1.1",
+    "jsonwebtoken": "^8.5.1",
+    "rsa-pem-from-mod-exp": "^0.8.4",
+    "swagger-jsdoc": "^6.1.0",
+    "swagger-ui-express": "^4.3.0",
+    "winston": "^3.4.0",
+    "winston-daily-rotate-file": "^4.6.0"
+  },
+  "devDependencies": {
+    "eslint": "^8.7.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-jest": "^26.0.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "jest": "^27.4.7",
+    "nodemon": "^2.0.15",
+    "prettier": "2.5.1"
+  }
+}

@@ -1,0 +1,9 @@
+variables:
+  PROJECT_NAME: wilko-nodejs-boilerplate
+  PROJECT_TYPE: microservice
+  K8S_NAMESPACE: omni-app-dev
+
+include:
+  - project: wilko2030/omni/shared-services/cicd-pipeline-code
+    ref: main
+    file: devops-template.yml

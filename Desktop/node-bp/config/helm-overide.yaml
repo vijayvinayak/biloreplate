@@ -1,0 +1,14 @@
+configMap:
+  enabled: true
+  jsonfile: true
+  configMapFileName: config.json
+  values: |-
+    {
+      "HEADER_ACCESS_CONTROL_ALLOW_ORIGIN": "*",
+      "auth": "false",
+      "error_details": "true"
+      "external_schema": "http://",
+      "log_to_file": "true",
+      "log_to_file_level": "error"
+    }
+  path: /deployments/config

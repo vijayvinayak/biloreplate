@@ -1,0 +1,6 @@
+docs/
+node_modules/
+coverage/
+*.md
+*.json
+build
